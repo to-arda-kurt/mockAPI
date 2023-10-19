@@ -1,0 +1,36 @@
+2023-10-19 19:10:51.761 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 19:10:51.792 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 19:10:51.794 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 19:10:51.794 +01:00 [INF] Hosting environment: Development
+2023-10-19 19:10:51.794 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 19:11:08.974 +01:00 [INF] Application is shutting down...
+2023-10-19 20:18:56.571 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 20:18:56.598 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 20:18:56.600 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 20:18:56.600 +01:00 [INF] Hosting environment: Development
+2023-10-19 20:18:56.600 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 20:19:47.471 +01:00 [INF] Application is shutting down...
+2023-10-19 20:19:50.298 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 20:19:50.324 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 20:19:50.326 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 20:19:50.326 +01:00 [INF] Hosting environment: Development
+2023-10-19 20:19:50.326 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 20:21:45.401 +01:00 [INF] Application is shutting down...
+2023-10-19 20:21:53.181 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 20:21:53.207 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 20:21:53.209 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 20:21:53.209 +01:00 [INF] Hosting environment: Development
+2023-10-19 20:21:53.209 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 20:24:15.650 +01:00 [INF] Application is shutting down...
+2023-10-19 20:24:25.881 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 20:24:25.908 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 20:24:25.910 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 20:24:25.910 +01:00 [INF] Hosting environment: Development
+2023-10-19 20:24:25.910 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 20:25:46.418 +01:00 [INF] Application is shutting down...
+2023-10-19 20:27:29.962 +01:00 [INF] Now listening on: https://localhost:7291
+2023-10-19 20:27:29.989 +01:00 [INF] Now listening on: http://localhost:5135
+2023-10-19 20:27:29.991 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-19 20:27:29.991 +01:00 [INF] Hosting environment: Development
+2023-10-19 20:27:29.991 +01:00 [INF] Content root path: /Users/korayardakurt/RiderProjects/MockAPI/MockAPI/
+2023-10-19 20:29:10.851 +01:00 [INF] Application is shutting down...
