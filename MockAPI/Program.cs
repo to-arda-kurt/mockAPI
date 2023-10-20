@@ -1,8 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MockAPI.Data;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connection = builder.Configuration.GetConnectionString("MockAPIConnectionString");
+builder.Services.AddDbContext<MockApiDbContext>(options => 
+    options.UseSqlServer(connection));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
