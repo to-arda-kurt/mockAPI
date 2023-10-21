@@ -27,6 +27,7 @@
 
     <ItemGroup>
       <Folder Include="logs\" />
+      <Folder Include="Models\Response\" />
     </ItemGroup>
 
 </Project>
