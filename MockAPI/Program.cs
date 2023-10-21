@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MockAPI.Configurations;
 using MockAPI.Data;
 using Serilog;
 
@@ -24,8 +25,11 @@ builder.Services.AddCors(options =>
 
 // SeriLog Configuration
 builder.Host.UseSerilog((ctx, lc) => 
-    lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));    
-    
+    lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
+
+//AutoMapper Injections
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

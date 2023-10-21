@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MockAPI.Data;
-using MockAPI.Models;
+using MockAPI.Models.Country;
 
 namespace MockAPI.Controllers
 {
@@ -15,24 +12,51 @@ namespace MockAPI.Controllers
     public class CountriesController : ControllerBase
     {
         private readonly MockApiDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CountriesController(MockApiDbContext context)
+        public CountriesController(MockApiDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
-
         // GET: api/Countries
         [HttpGet]
-        [Route("All")]
-        public async Task<ActionResult<IEnumerable<Country>>> GetCountries()
+  
+        public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
-            return await _context.Countries.ToListAsync();
+            var countries = await _context.Countries.ToListAsync();
+            var data = _mapper.Map<List<GetCountryDto>>(countries);
+            return Ok(data);
         }
 
         // GET: api/Countries/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Country>> GetCountry(int id)
+        public async Task<ActionResult<CountryDto>> GetCountry(int id)
         {
+            var country = await _context.Countries
+                .Include(q =>q.Houses)
+                .FirstOrDefaultAsync(q => q.Id == id);
+
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            var data = _mapper.Map<CountryDto>(country);
+            
+            return Ok(data);
+        }
+
+        // PUT: api/Countries/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCountry(int id, UpdateCountryDto updateCountryDto)
+        {
+            if (id != updateCountryDto.Id)
+            {
+                return BadRequest();
+            }
+            
             var country = await _context.Countries.FindAsync(id);
 
             if (country == null)
@@ -40,21 +64,8 @@ namespace MockAPI.Controllers
                 return NotFound();
             }
 
-            return country;
-        }
-
-        // PUT: api/Countries/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountry(int id, Country country)
-        {
-            if (id != country.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(country).State = EntityState.Modified;
-
+            _mapper.Map(updateCountryDto, country);
+            
             try
             {
                 await _context.SaveChangesAsync();
@@ -79,11 +90,8 @@ namespace MockAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Country>> PostCountry(CreateCountryDto createCountry)
         {
-            var country = new Country()
-            {
-                Name = createCountry.Name,
-                ShortName = createCountry.ShortName
-            };
+            var country = _mapper.Map<Country>(createCountry);
+            
             _context.Countries.Add(country);
             await _context.SaveChangesAsync();
 
