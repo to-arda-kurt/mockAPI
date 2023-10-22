@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MockAPI.Configurations;
+using MockAPI.Contracts;
 using MockAPI.Data;
+using MockAPI.Repositories;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,6 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowAnyOrigin()
         .AllowAnyMethod());
-    
 });
 
 // SeriLog Configuration
@@ -29,6 +30,9 @@ builder.Host.UseSerilog((ctx, lc) =>
 
 //AutoMapper Injections
 builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
 
 var app = builder.Build();
 
