@@ -17,6 +17,9 @@ public class MapperConfig : Profile
         
         // House
         CreateMap<House, HouseDto>().ReverseMap();
+        CreateMap<House, GetHouseDto>().ReverseMap();
+        CreateMap<House, UpdateHouseDto>().ReverseMap();
+        CreateMap<House, CreateHouseDto>().ReverseMap();
 
     }
 }
