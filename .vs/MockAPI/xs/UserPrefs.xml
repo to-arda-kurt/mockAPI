@@ -1,28 +1,23 @@
 ﻿<Properties StartupConfiguration="{B389C774-4FF4-41F7-A3A3-322C274F6E4D}|Default">
-  <MonoDevelop.Ide.ItemProperties.MockAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MockAPI/appsettings.json">
     <Files>
-      <File FileName="MockAPI/appsettings.json" Line="1" Column="1" />
+      <File FileName="MockAPI/appsettings.json" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MockAPI" expanded="True">
-            <Node name="MockAPI" expanded="True">
-              <Node name="appsettings.json" selected="True" />
-            </Node>
+            <Node name="MockAPI" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MockAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

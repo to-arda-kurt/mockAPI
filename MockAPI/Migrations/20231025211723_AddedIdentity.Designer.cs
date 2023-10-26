@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MockAPI.Data;
 
@@ -11,9 +12,11 @@ using MockAPI.Data;
 namespace MockAPI.Migrations
 {
     [DbContext(typeof(MockApiDbContext))]
-    partial class MockApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025211723_AddedIdentity")]
+    partial class AddedIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,22 +50,6 @@ namespace MockAPI.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "47d8a131-9482-46fd-a0ec-2a18e32bac64",
-                            ConcurrencyStamp = "fa4f4a4b-5179-4f03-be40-e51c0c5d05a0",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "9af204ba-4d28-4229-a623-f572395988ee",
-                            ConcurrencyStamp = "f3dde67e-94e8-42e0-80a3-912d0e88b95b",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

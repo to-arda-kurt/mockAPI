@@ -13,8 +13,7 @@ namespace MockAPI.Controllers
     {
         private readonly IHousesRepository _housesRepository;
         private readonly IMapper _mapper;
-       
-
+        
         public HousesController(IHousesRepository housesRepository, IMapper mapper)
         {
             _housesRepository = housesRepository;
@@ -34,7 +33,6 @@ namespace MockAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<HouseDto>> GetHouse(int id)
         {
-            
             var house = await _housesRepository.GetDetails(id);
 
             if (house == null)
